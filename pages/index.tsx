@@ -1,15 +1,14 @@
-import useAuth from '../hooks/useAuth';
-
-
+import Cover from 'src/components/Cover';
+import Layout from 'src/components/Layout';
+// import useAuth from 'src/hooks/useAuth';
 
 export default function Home() {
 
-  const { user, signin } = useAuth();
-  console.log("User: ", user);
+  // const { user, signin } = useAuth();
+  // console.log("User: ", user);
   return (
-    <div>
-      <h1>Aprenda programação direto ao ponto</h1>
-      <button onClick={() => signin()}>Entrar com Github</button>
-    </div>
+   <Layout>
+     <Cover/>
+   </Layout>
   )
 }
