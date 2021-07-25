@@ -1,17 +1,18 @@
-import { ITechnologies } from 'interfaces/props.dto';
 import { GetStaticProps, GetStaticPropsContext } from 'next';
-import Cover from 'src/components/Cover';
 import Layout from 'src/components/Layout';
+import Cover from 'src/components/Cover';
+import { ITechnologies } from 'interfaces/props.dto';
 import { getAllTechnologies } from 'src/lib/dato-cms';
-// import useAuth from 'src/hooks/useAuth';
+import Footer from 'src/components/Footer';
+import { Box } from '@chakra-ui/react';
 
 export default function Home({ technologies }: ITechnologies) {
-
-  // const { user, signin } = useAuth();
-  // console.log("User: ", user);
   return (
    <Layout>
-     <Cover technologies={technologies}/>
+     <Box pb={10}>
+        <Cover technologies={technologies}/>
+        <Footer/>
+     </Box>
    </Layout>
   )
 }
