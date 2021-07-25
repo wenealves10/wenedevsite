@@ -1,11 +1,14 @@
 import { IProps } from 'src/../interfaces/props.dto';
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Flex, useColorModeValue } from '@chakra-ui/react';
 import TopBar from '../TopBar';
 import { colors } from 'src/styles/colors';
 
 function Layout({children}: IProps){
+
+  const bgColor = useColorModeValue('#F4F6F8', '#1A202C');
+
   return (
-     <Box bgColor={colors.bg.color1} minH="100vh">
+     <Box bgColor={bgColor} minH="100vh">
        <TopBar/>
        <Flex flexDirection="column" pt={'62px'}>
          {children}
