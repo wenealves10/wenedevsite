@@ -34,3 +34,22 @@ export interface ITheme {
  export interface ITechnologies {
    technologies: ITechnology[],
  }
+
+ export interface ISerie {
+   id: string;
+   name: string;
+   slug: string;
+   description?: string;
+   seriesType?: string;
+   thumbUrl?: {
+    id: string;
+    url: string;
+   };
+   seasons: {
+     id: string;
+   }[];
+ }
+
+ export interface ISeries {
+   series: ISerie[];
+ }
