@@ -1,5 +1,6 @@
-const theme = {
-  initialColorMode: 'dark',
+import { ITheme } from '../interfaces/props.dto';
+const theme: ITheme = {
+  initialColorMode: 'light',
   fonts: {
     body: `Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
   },
