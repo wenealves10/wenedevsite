@@ -1,9 +1,13 @@
-import { Box, Button, Flex, Heading, Text } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, Text, useColorModeValue } from '@chakra-ui/react';
 import { colors } from 'src/../styles/colors';
+import { ITechnologies } from 'src/../interfaces/props.dto';
 
-function Cover(){
+function Cover({ technologies }: ITechnologies){
+
+  const bgColor = useColorModeValue('#F4F6F8', '#1A202C');
+
   return (
-    <Box bgColor={colors.bg.color2} color="black">
+    <Box bgColor={bgColor} color="black">
       <Flex
        justifyContent="center"
        alignItems="center"
@@ -35,7 +39,14 @@ function Cover(){
             <Box>
               Mantenha seus conhecimentos atualizados com as mais novas{' '}
             </Box>
-            <Box>tecnologias que estão disponíveis no mercado!</Box>
+            <Box>
+              tecnologias que estão disponíveis no mercado!
+              <ul>
+                {technologies.map(technology => (
+                  <li key={technology.id}>{technology.name}</li>
+                ))}
+              </ul>
+            </Box>
           </Text>
           <Box>
             <Button
