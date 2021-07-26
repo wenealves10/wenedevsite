@@ -1,9 +1,8 @@
 import { IProps } from 'src/../interfaces/props.dto';
 import { Box, Flex, useColorModeValue } from '@chakra-ui/react';
 import TopBar from '../TopBar';
-import { colors } from 'src/styles/colors';
 
-function Layout({children}: IProps){
+function Layout({ children }: IProps){
 
   const bgColor = useColorModeValue('#F4F6F8', '#1A202C');
 
