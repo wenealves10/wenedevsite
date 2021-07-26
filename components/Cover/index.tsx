@@ -5,7 +5,6 @@ import {
   Flex,
   Text,
   Box,
-  SimpleGrid,
   useColorModeValue,
   Wrap,
   WrapItem,
@@ -14,6 +13,7 @@ import {
 } from '@chakra-ui/react';
 import { ITechnologies } from 'src/../interfaces/props.dto';
 import { useState } from 'react';
+
 
 function Cover({ technologies }: ITechnologies){
 
@@ -85,7 +85,7 @@ function Cover({ technologies }: ITechnologies){
               {currentTechnologies
                 ?.filter((f) => f.defaultVisible)
                 ?.map((tech) => (
-                  <WrapItem>
+                  <WrapItem key={tech.id}>
                     <Center
                       w="100px"
                       h="100px"
