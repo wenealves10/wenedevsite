@@ -3,7 +3,11 @@ import { useRouter } from 'next/router';
 import { Box, Badge, Image, Text } from '@chakra-ui/react';
 import { ISerie } from '../../interfaces/props.dto';
 
-function SerieCard(serie: ISerie) {
+type Props = {
+  serie: ISerie;
+}
+
+function SerieCard({serie}: Props) {
   const router = useRouter();
 
   const handleClick = () => {
