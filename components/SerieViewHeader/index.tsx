@@ -11,19 +11,21 @@ import dayjs from 'dayjs';
 import { IAllSeries } from 'interfaces/props.dto';
 import { useRouter } from 'next/router';
 import useAuth from 'src/hooks/useAuth';
+import withAuthModal from '../Auth';
 
 type Props = {
   serie: IAllSeries;
+  openAuthModal: () => void;
 }
 
-const SerieViewHeader = ({ serie }: Props) => {
+const SerieViewHeader = ({ serie, openAuthModal }: Props) => {
   const bg = useColorModeValue('#FFFFFF', '#1A202C');
   const { user } = useAuth();
   const router = useRouter();
 
   const handleStartNow = () => {
     if (!user) {
-
+      openAuthModal();
     } else {
       router.push(`/player/${serie.slug}`);
     }
@@ -50,4 +52,4 @@ const SerieViewHeader = ({ serie }: Props) => {
   );
 };
 
-export default SerieViewHeader;
+export default withAuthModal(SerieViewHeader);
