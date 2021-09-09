@@ -9,11 +9,7 @@ type Props = {
 
 function SeriePage({ serie }: Props) {
   return (
-    <Layout
-      title={serie.name}
-      path={`/${serie.slug}`}
-      description={serie.description}
-    >
+    <Layout>
       <SerieView serie={serie} />
     </Layout>
   )
